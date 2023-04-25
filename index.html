@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <script type="module" src="./assets/js/main.js"></script>
+    <title>To Do List</title>
+</head>
+<body>
+    <header></header>
+    <main>
+        <h1 class="header__title">My to do list</h1>
+        <article class="main__form">
+            <!-- 💁 no action for this form : no GET or POST method necessary-->
+            <form id="task-form">
+                <label for="task-title">Title of the task</label><br>
+                <input type="text" id="task-title" name="task-title" placeholder="The title of your task..."><br>
+
+                <label for="task-informations">Task informations</label><br>
+                <textarea id="task-informations" name="task-informations" placeholder="Here's, some informations of your task..."></textarea><br>
+
+                <input type="submit" value="Add this task">
+            </form>
+        </article>
+        <article class="main__list-of-tasks">
+            <!-- 📔 Here's come the differents tasks of the to do list -->
+        </article>
+    </main>
+    <footer>
+        <q cite="https://www.brainyquote.com/quotes/plato_396707" class="footer__quote">
+            Better a little which is well done, than a great deal imperfectly.
+        </q>
+        <figcaption>- Plato</figcaption>
+    </footer>
+</body>
+</html>

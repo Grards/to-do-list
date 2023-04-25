@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@600&display=swap');
+
+@import "./vendors/reset.scss";
+
+body{
+    font-family: 'Barlow', sans-serif;
+    background-color: #ffdfbf;
+    color: #0c0c0c;;
+}
+header{
+    height: 250px;
+    width: 100%;
+    background-image: url("../img/to-do.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+main{
+    .header__title{
+        margin: 20px 0 50px;
+        text-align: center;
+        font-size: 4vh;
+        text-transform: capitalize;
+    }
+    .main__form{
+        width: 80%;
+        margin: 20px auto;
+        .task-form{
+            width: 100%;
+        }
+        #task-title{
+            font-size: 1.8vh;
+            font-weight: 500;
+            color: rgb(44, 44, 255);
+        }
+        #task-title, textarea{
+            width: 100%;
+        }
+        input, textarea{
+            margin: 10px 0 20px 0;
+            padding: 5px 10px;
+            border-radius: 10px;
+            border: 0.5px solid #0c0c0c;
+        }
+        textarea{
+            min-height: 150px;
+        }
+        input[type=submit]{
+            background-color: rgb(238, 205, 58);
+            padding: 10px;
+            width: 150px;
+            border: 0.5px solid #0c0c0c;
+            // box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+            text-transform: uppercase;
+            font-weight: 600;
+            color: #0c0c0c;
+            transition: all 0.5s;
+            border-radius: 10px;
+            cursor: pointer;
+            &:hover{
+                background-color: rgb(67, 236, 67);
+                font-size: 1.7vh;
+            }
+        }
+    }
+}
+footer{
+    height: 50px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    background-color: #0c0c0c ;
+    color: whitesmoke;
+    font-size: 1.5vh;
+    padding: 20px 0;
+    position: fixed;
+    bottom: 0;
+    q{
+        width: 70%;
+        font-style: italic;
+    }
+    figcaption{
+        align-self: flex-end;
+    }
+}
