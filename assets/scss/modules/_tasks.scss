@@ -1,0 +1,35 @@
+.main__list-of-tasks{
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 5px;
+    .task-card{
+        width: 400px;
+        height: 400px;
+        background-image: url("../img/post-it.png");
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: 'Caveat', cursive;
+        list-style-type: none;
+        padding: 0;
+        .card-text{
+            position: relative;
+            height: 180px;
+            width: 220px;
+            overflow: hidden;
+            margin: 110px 80% 0 20%;
+            transform: rotate(-9deg);
+            h2{
+                text-align: center;
+                font-size: 3.5vh;
+                margin-bottom: 10px;
+            }
+            p{
+                font-size: 2.4vh;
+            }
+        }
+    }
+}
