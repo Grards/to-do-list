@@ -1,4 +1,9 @@
-import { submitForm, renderTasks } from "./modules/tasks.js"
+import { tasksForm, submitForm, renderTasks } from "./modules/tasks.js"
+import { mobileTaskButton, toggleTaskMenu } from "./modules/mobileTaskMenu.js"
+import { minimumDate } from "./modules/datePicker.js"
 
 renderTasks() // first render since last visit of the site
-document.addEventListener('submit', submitForm)
+minimumDate() // set the minimum date for deadlines
+
+tasksForm.addEventListener('submit', submitForm)
+mobileTaskButton.addEventListener('click', toggleTaskMenu)

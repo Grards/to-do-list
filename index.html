@@ -4,27 +4,37 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="icon" type="image/x-icon" href="./assets/img/favicon.ico">
+    <script src="https://kit.fontawesome.com/cafc80da7f.js" crossorigin="anonymous"></script>
     <script type="module" src="./assets/js/main.js"></script>
     <title>To Do List</title>
 </head>
 <body>
-    <header></header>
-    <main>
+    <header>
         <h1 class="header__title">My to do list</h1>
-        <article class="main__form">
+        <i class="fa-solid fa-clipboard-check" id="mobile-task-button"></i>
+    </header>
+
+    <main>
+        <aside id="aside-form" class="aside__form">
             <!-- 💁 no action for this form : no GET or POST method necessary-->
             <form id="task-form">
                 <label for="task-title">Title of the task</label><br>
-                <input type="text" id="task-title" name="task-title" placeholder="The title of your task..." maxlength="22"><br>
+                <input type="text" id="task-title" name="task-title" placeholder="The title about your task..." maxlength="22"><br>
 
                 <label for="task-informations">Task informations</label><br>
                 <textarea id="task-informations" name="task-informations" placeholder="Here's, some informations of your task..." maxlength="140"></textarea><br>
 
+                <label for="task-completion">Task complete ?</label>
+                <input type="checkbox" id="task-completion" name="task-completion">
+
+                <label for="task-deadline">Deadline of the task</label>
+                <input type="date" id="task-deadline" name="task-deadline">
+
                 <input type="submit" value="Add this task">
             </form>
-        </article>
+        </aside>
         <article id="list-of-tasks" class="main__list-of-tasks">
             <!-- 📔 Here's come the differents tasks of the to do list -->
         </article>

@@ -1,84 +1,139 @@
+html{
+    height: 100%;
+}
 body{
     font-family: 'Barlow', sans-serif;
     background-color: $body-backround;
     color: $default-text-color;
-    min-height: 100%;
-}
-header{
-    height: 250px;
+    height: 100%;
     width: 100%;
-    background-image: url("../img/to-do.jpg");
-    background-position: center center;
+    background-image: url(../img/mobile-mountain2.jpg);
+    background-position: top center;
     background-repeat: no-repeat;
     background-size: cover;
+    background-attachment: fixed;
+}
+header{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+    margin-bottom: 50px;
+    .header__title{
+        font-size: 4vh;
+        // text-transform: capitalize;
+        margin-left: 20px;
+    }
+    .fa-clipboard-check{
+        font-size: 4vh;
+        cursor: pointer;
+        position: fixed;
+        right: 20px;
+    }
 }
 main{
-    .header__title{
-        margin: 20px 0 50px;
-        text-align: center;
-        font-size: 4vh;
-        text-transform: capitalize;
-    }
-    .main__form{
-        width: 80%;
-        margin: 20px auto;
+    height: 100%;
+    aside{
+        position: fixed;
+        top: 75px;
+        right: 27px;
+        width: 220px;
+        height: 400px;
+        z-index: 50;
+        background-color: $aside-background;
+        box-shadow: 0px 7px 5px rgba(0, 0, 0, 0.5);
+        border-radius: 10px 0 10px 10px;
+        padding: 15px;
+        display: none;
+        &:before{
+            content:"";
+            display: block;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-left: 12px solid transparent;
+            border-top: 12px solid transparent;
+            border-bottom: 12px solid $aside-background;
+            border-right: 12px solid $aside-background;
+            position: absolute;
+            z-index: 50;
+            right: 0px;
+            top: -22px;
+        }
         .task-form{
             width: 100%;
         }
         #task-title{
             font-size: 1.8vh;
             font-weight: 500;
-            color: rgb(44, 44, 255);
-        }
-        #task-title, textarea{
-            width: 100%;
         }
         input, textarea{
-            margin: 10px 0 20px 0;
+            background-color: transparent;
+            border: none;
+            border-bottom: 1px solid $default-text-color;
+            width: 90%;
+            margin: 10px auto 20px auto;
             padding: 5px 10px;
-            border-radius: 10px;
-            border: 0.5px solid $default-text-color;
         }
         textarea{
-            min-height: 150px;
+            height: 60px
         }
         input[type=submit]{
             background-color: $button-background;
-            padding: 10px;
-            width: 150px;
+            padding: 5px;
+            width: 120px;
             border: 0.5px solid $default-text-color;
-            // box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
             text-transform: uppercase;
             font-weight: 600;
-            color: #0c0c0c;
+            color: $default-text-color;
             transition: all 0.5s;
             border-radius: 10px;
             cursor: pointer;
             overflow: hidden;
-            &:hover{
-                background-color: $button-background-hover;
-                font-size: 1.7vh;
-            }
+        }
+        label{
+            display: block;
+            width: 100%;
+        }
+        #task-completion{
+            width: auto;
         }
     }
+    #list-of-tasks{
+        min-height: 100%;
+        padding-bottom: 100px;
+    }
+    .mobile-menu-accessibility{
+        display: block;
+    }
+    .no-task{
+        font-size: 4vh;
+        font-style: italic;
+        font-family: 'Caveat', cursive;
+        position: absolute;
+        top: 45%;
+    }
 }
+
 footer{
-    height: 50px;
+    height: 35px;
     width: 100%;
+    position: fixed;
+    bottom: 0;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     background-color: $default-text-color;
-    color: $reverse-text-color;
-    font-size: 1.5vh;
-    padding: 20px 0;
-    position: relative;
-    bottom: 0;
+    color: $discret-text-color;
+    font-size: 1.8vh;
+    padding: 10px 0;
     q{
         width: 70%;
-        font-style: italic;
     }
     figcaption{
         align-self: flex-end;

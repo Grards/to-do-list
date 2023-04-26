@@ -57,56 +57,97 @@ table {
   border-spacing: 0;
 }
 
+html {
+  height: 100%;
+}
+
 body {
   font-family: "Barlow", sans-serif;
-  background-color: #ffdfbf;
+  background-color: #71DEDD;
   color: #0c0c0c;
-  min-height: 100%;
+  height: 100%;
+  width: 100%;
+  background-image: url(../img/mobile-mountain2.jpg);
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 header {
-  height: 250px;
   width: 100%;
-  background-image: url("../img/to-do.jpg");
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
+  margin-bottom: 50px;
+}
+header .header__title {
+  font-size: 4vh;
+  margin-left: 20px;
+}
+header .fa-clipboard-check {
+  font-size: 4vh;
+  cursor: pointer;
+  position: fixed;
+  right: 20px;
 }
 
-main .header__title {
-  margin: 20px 0 50px;
-  text-align: center;
-  font-size: 4vh;
-  text-transform: capitalize;
+main {
+  height: 100%;
 }
-main .main__form {
-  width: 80%;
-  margin: 20px auto;
+main aside {
+  position: fixed;
+  top: 75px;
+  right: 27px;
+  width: 220px;
+  height: 400px;
+  z-index: 50;
+  background-color: #dadada;
+  box-shadow: 0px 7px 5px rgba(0, 0, 0, 0.5);
+  border-radius: 10px 0 10px 10px;
+  padding: 15px;
+  display: none;
 }
-main .main__form .task-form {
+main aside:before {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-left: 12px solid transparent;
+  border-top: 12px solid transparent;
+  border-bottom: 12px solid #dadada;
+  border-right: 12px solid #dadada;
+  position: absolute;
+  z-index: 50;
+  right: 0px;
+  top: -22px;
+}
+main aside .task-form {
   width: 100%;
 }
-main .main__form #task-title {
+main aside #task-title {
   font-size: 1.8vh;
   font-weight: 500;
-  color: rgb(44, 44, 255);
 }
-main .main__form #task-title, main .main__form textarea {
-  width: 100%;
-}
-main .main__form input, main .main__form textarea {
-  margin: 10px 0 20px 0;
+main aside input, main aside textarea {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #0c0c0c;
+  width: 90%;
+  margin: 10px auto 20px auto;
   padding: 5px 10px;
-  border-radius: 10px;
-  border: 0.5px solid #0c0c0c;
 }
-main .main__form textarea {
-  min-height: 150px;
+main aside textarea {
+  height: 60px;
 }
-main .main__form input[type=submit] {
+main aside input[type=submit] {
   background-color: #eecd3a;
-  padding: 10px;
-  width: 150px;
+  padding: 5px;
+  width: 120px;
   border: 0.5px solid #0c0c0c;
   text-transform: uppercase;
   font-weight: 600;
@@ -116,29 +157,45 @@ main .main__form input[type=submit] {
   cursor: pointer;
   overflow: hidden;
 }
-main .main__form input[type=submit]:hover {
-  background-color: #43ec43;
-  font-size: 1.7vh;
+main aside label {
+  display: block;
+  width: 100%;
+}
+main aside #task-completion {
+  width: auto;
+}
+main #list-of-tasks {
+  min-height: 100%;
+  padding-bottom: 100px;
+}
+main .mobile-menu-accessibility {
+  display: block;
+}
+main .no-task {
+  font-size: 4vh;
+  font-style: italic;
+  font-family: "Caveat", cursive;
+  position: absolute;
+  top: 45%;
 }
 
 footer {
-  height: 50px;
+  height: 35px;
   width: 100%;
+  position: fixed;
+  bottom: 0;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   background-color: #0c0c0c;
-  color: #f5f5f5;
-  font-size: 1.5vh;
-  padding: 20px 0;
-  position: relative;
-  bottom: 0;
+  color: #999999;
+  font-size: 1.8vh;
+  padding: 10px 0;
 }
 footer q {
   width: 70%;
-  font-style: italic;
 }
 footer figcaption {
   align-self: flex-end;
@@ -148,34 +205,76 @@ footer figcaption {
   width: 100%;
   margin: 0 auto;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
   flex-wrap: wrap;
-  gap: 5px;
+  gap: 15px;
 }
 .main__list-of-tasks .task-card {
-  width: 400px;
-  height: 400px;
-  background-image: url("../img/post-it.png");
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  font-family: "Caveat", cursive;
+  width: 80%;
+  height: 150px;
+  background-color: #dadada;
   list-style-type: none;
-  padding: 0;
+  padding: 15px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
 }
 .main__list-of-tasks .task-card .card-text {
   position: relative;
-  height: 180px;
-  width: 220px;
+  height: 100%;
   overflow: hidden;
-  margin: 110px 80% 0 20%;
-  transform: rotate(-9deg);
-}
-.main__list-of-tasks .task-card .card-text h2 {
-  text-align: center;
-  font-size: 3.5vh;
-  margin-bottom: 10px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 .main__list-of-tasks .task-card .card-text p {
-  font-size: 2.4vh;
+  font-size: 2vh;
+}
+.main__list-of-tasks .task-card .card-text .header-task {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+.main__list-of-tasks .task-card .card-text .header-task .task-title-showned {
+  flex-grow: 4;
+  text-align: left;
+  font-size: 2.5vh;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  color: rgb(2, 129, 2);
+}
+.main__list-of-tasks .task-card .card-text .header-task .task-edition, .main__list-of-tasks .task-card .card-text .header-task .task-to-trash {
+  justify-self: end;
+  margin: 0 5px;
+  cursor: pointer;
+}
+.main__list-of-tasks .task-card .card-text .task-informations-showned {
+  width: 100%;
+  height: 60%;
+  overflow-y: scroll;
+  line-height: 2.5vh;
+}
+.main__list-of-tasks .task-card .card-text .footer-task {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.main__list-of-tasks .task-card .card-text .footer-task .task-deadline-showned {
+  color: rgb(161, 78, 0);
+  align-self: flex-end;
+  font-size: 1.6vh;
+}
+.main__list-of-tasks .task-card .card-text .footer-task .task-finished-button {
+  align-self: center;
+}
+
+.task-finished {
+  background-color: #ffff82 !important;
+}
+.task-finished .task-finished-button {
+  border: none;
+  background-color: transparent;
 }/*# sourceMappingURL=main.css.map */
