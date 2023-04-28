@@ -1,4 +1,3 @@
-import { savedTasks } from "./savedTasks.js"
 import { showTasks } from "./showTasks.js"
 
 /**
@@ -26,6 +25,7 @@ export function addTask(){
         oldTasks.push(newTask);
         localStorage.setItem('tasks', JSON.stringify(oldTasks))
     }
+    showTasks()
 }
 
 function dateNow(){
