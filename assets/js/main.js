@@ -1,5 +1,5 @@
 const tasksForm = document.getElementById("task-form")
-// const tasksCards = document.getElementsByClassName("task-card")
+
 
 // import { tasksForm, submitForm, renderTasks } from "./modules/tasks.js"
 import { mobileTaskButton, toggleTaskMenu } from "./modules/mobileTaskMenu.js"
@@ -22,5 +22,7 @@ tasksForm.addEventListener('submit', event => {
 
 // Mark task as finished
 for(let button of taskFinished){
-    button.addEventListener('click', completeTasks)
+    button.addEventListener('click', event => {
+       completeTasks(button)
+    })
 }

@@ -15,12 +15,15 @@ export function addTask(){
         alert("You must enter all informations of your task !")
     }else{
         const oldTasks = JSON.parse(window.localStorage.getItem("tasks")) || []
+        let incrementID = oldTasks.length
+        incrementID++
+
         const newTask = {
-            id : dateNow(),
+            "id" : incrementID,
             "title" : taskTitle.value,
             "informations" : taskInformations.value,
-            completion : taskCompletion.checked,
-            deadline : taskDeadline.value
+            "completion" : taskCompletion.checked,
+            "deadline" : taskDeadline.value
         }
         oldTasks.push(newTask);
         localStorage.setItem('tasks', JSON.stringify(oldTasks))
@@ -28,8 +31,3 @@ export function addTask(){
     showTasks()
 }
 
-function dateNow(){
-    // const idRandom = Math.floor(Math.random() * Math.floor(Math.random() * Date.now()))
-    const dateNow = Date.now()
-    return dateNow
-}
