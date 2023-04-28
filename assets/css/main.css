@@ -219,24 +219,19 @@ footer figcaption {
   padding: 15px;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
   overflow: hidden;
-}
-.main__list-of-tasks .task-card .card-text {
-  position: relative;
-  height: 100%;
-  overflow: hidden;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
 }
-.main__list-of-tasks .task-card .card-text p {
+.main__list-of-tasks .task-card p {
   font-size: 2vh;
 }
-.main__list-of-tasks .task-card .card-text .header-task {
+.main__list-of-tasks .task-card .header-task {
   display: flex;
   flex-direction: row;
   width: 100%;
 }
-.main__list-of-tasks .task-card .card-text .header-task .task-title-showned {
+.main__list-of-tasks .task-card .header-task .task-title-showned {
   flex-grow: 4;
   text-align: left;
   font-size: 2.5vh;
@@ -244,37 +239,34 @@ footer figcaption {
   text-transform: uppercase;
   color: rgb(2, 129, 2);
 }
-.main__list-of-tasks .task-card .card-text .header-task .task-edition, .main__list-of-tasks .task-card .card-text .header-task .task-to-trash {
+.main__list-of-tasks .task-card .header-task .task-edition, .main__list-of-tasks .task-card .header-task .task-to-trash {
   justify-self: end;
   margin: 0 5px;
   cursor: pointer;
 }
-.main__list-of-tasks .task-card .card-text .task-informations-showned {
+.main__list-of-tasks .task-card .task-informations-showned {
   width: 100%;
   height: 60%;
   overflow-y: scroll;
   line-height: 2.5vh;
 }
-.main__list-of-tasks .task-card .card-text .footer-task {
+.main__list-of-tasks .task-card .footer-task {
   width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   flex-wrap: wrap;
 }
-.main__list-of-tasks .task-card .card-text .footer-task .task-deadline-showned {
+.main__list-of-tasks .task-card .footer-task .task-deadline-showned {
   color: rgb(161, 78, 0);
   align-self: flex-end;
   font-size: 1.6vh;
 }
-.main__list-of-tasks .task-card .card-text .footer-task .task-finished-button {
-  align-self: center;
-}
 
-.task-finished {
+.toggle-state-task {
   background-color: #ffff82 !important;
 }
-.task-finished .task-finished-button {
+.toggle-state-task .finished_true {
   border: none;
   background-color: transparent;
 }/*# sourceMappingURL=main.css.map */

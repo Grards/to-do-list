@@ -1,7 +1,10 @@
-const tasksCards = document.getElementsByClassName("task-card")
+import { updateTasks } from "./updateTasks.js"
+export const taskFinished = document.getElementsByClassName("task-complete-button")   
 
 export function completeTasks(){
-    // tasksCards.forEach(element => {
-    //     console.log(element)
-    // });
+    for(let task of taskFinished){
+        console.log(task)
+        task.classList.add("finished_true")
+    }
+    updateTasks
 }

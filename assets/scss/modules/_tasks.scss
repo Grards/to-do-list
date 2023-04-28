@@ -15,66 +15,55 @@
         padding: 15px;
         box-shadow: 2px 2px 5px rgba(0, 0, 0,0.5);
         overflow: hidden;
-        .card-text{
-            position: relative;
-            height: 100%;
-            overflow: hidden;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        p{
+            font-size: 2vh;
+        }
+        .header-task{
             display: flex;
             flex-direction: row;
-            flex-wrap: wrap;
-            p{
-                font-size: 2vh;
+            width: 100%;
+            .task-title-showned{
+                flex-grow: 4;
+                text-align: left;
+                font-size: 2.5vh;
+                margin-bottom: 10px;
+                text-transform: uppercase;
+                color: rgb(2, 129, 2);
             }
-            .header-task{
-                display: flex;
-                flex-direction: row;
-                width: 100%;
-                .task-title-showned{
-                    flex-grow: 4;
-                    text-align: left;
-                    font-size: 2.5vh;
-                    margin-bottom: 10px;
-                    text-transform: uppercase;
-                    color: rgb(2, 129, 2);
-                }
-                .task-edition, .task-to-trash{
-                    justify-self: end;
-                    margin: 0 5px;
-                    cursor: pointer;
-                }
+            .task-edition, .task-to-trash{
+                justify-self: end;
+                margin: 0 5px;
+                cursor: pointer;
             }
-            .task-informations-showned{
-                width: 100%;
-                height: 60%;
-                overflow-y: scroll;
-                line-height: 2.5vh;
-            }
-            .footer-task{
-                width: 100%;
-                display: flex;
-                flex-direction: row;
-                justify-content: space-between;
-                flex-wrap: wrap;
-                .task-deadline-showned{
-                    color: rgb(161, 78, 0);
-                    align-self: flex-end;
-                    font-size: 1.6vh;
-                }
-                .task-finished-button{
-                    align-self: center;
-                    // border-radius: 10px;
-                    // border: none;
-                    // padding: 5px;
-                    // background-color: $button-background-hover;
-                }
-            }
-
         }
+        .task-informations-showned{
+            width: 100%;
+            height: 60%;
+            overflow-y: scroll;
+            line-height: 2.5vh;
+        }
+        .footer-task{
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            .task-deadline-showned{
+                color: rgb(161, 78, 0);
+                align-self: flex-end;
+                font-size: 1.6vh;
+            }
+        }
+
+        
     }
 }
-.task-finished{
+.toggle-state-task{
     background-color : #ffff82 !important;
-    .task-finished-button{
+    .finished_true{
         border: none;
         background-color: transparent;
     }
