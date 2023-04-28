@@ -1,6 +1,11 @@
 import { savedTasks } from "./savedTasks.js"
 import { showTasks } from "./showTasks.js"
 
+/**
+ * This function get the informations of the form.
+ * Then, she build a new object (newTask)
+ * And finally, she add this object in the localStorage
+ */
 export function addTask(){
     const taskTitle = document.getElementById("task-title")
     const taskInformations = document.getElementById("task-informations")
@@ -12,7 +17,7 @@ export function addTask(){
     }else{
         const oldTasks = JSON.parse(window.localStorage.getItem("tasks")) || []
         const newTask = {
-            id : idRandom(),
+            id : dateNow(),
             "title" : taskTitle.value,
             "informations" : taskInformations.value,
             completion : taskCompletion.checked,
@@ -23,8 +28,8 @@ export function addTask(){
     }
 }
 
-function idRandom(){
+function dateNow(){
     // const idRandom = Math.floor(Math.random() * Math.floor(Math.random() * Date.now()))
-    const idRandom = Date.now()
-    return idRandom
+    const dateNow = Date.now()
+    return dateNow
 }
