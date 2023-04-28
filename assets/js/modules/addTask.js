@@ -7,11 +7,14 @@ export function addTask(){
     const taskCompletion = document.getElementById("task-completion")
     const taskDeadline = document.getElementById("task-deadline")
 
+    let test = []
 
     if(taskTitle.value == "" || taskInformations.value == "" || taskDeadline == null){
         alert("You must enter all informations of your task !")
     }else{
-        let listOfTasks = window.localStorage.getItem("tasksExistants") || []
+        const oldTasks = JSON.parse(window.localStorage.getItem("tasks")) || []
+        console.log(oldTasks)
+
         const newTask = {
             id : idRandom(),
             "title" : taskTitle.value,
@@ -19,11 +22,11 @@ export function addTask(){
             completion : taskCompletion.checked,
             deadline : taskDeadline.value
         }
-        console.log(listOfTasks)
-        listOfTasks.push(JSON.stringify(newTask))
-        window.localStorage.setItem("tasksExistants",listOfTasks)   
-        console.log(localStorage)
 
+        oldTasks.push(newTask);
+        localStorage.setItem('tasks', JSON.stringify(oldTasks))
+        console.log(localStorage)
+       
 
         // tasksExistants.push({
         //     // id : tasksExistants.length,
