@@ -6,9 +6,7 @@ export function addTask(){
     const taskInformations = document.getElementById("task-informations")
     const taskCompletion = document.getElementById("task-completion")
     const taskDeadline = document.getElementById("task-deadline")
-    // let tasksExistants = savedTasks()
-    // console.log("task existant")
-    // console.log(tasksExistants)
+
 
     if(taskTitle.value == "" || taskInformations.value == "" || taskDeadline == null){
         alert("You must enter all informations of your task !")
@@ -21,17 +19,10 @@ export function addTask(){
             completion : taskCompletion.checked,
             deadline : taskDeadline.value
         }
-// listOfTasks.push(newTask)
-        window.localStorage.setItem("tasksExistants",listOfTasks)
         console.log(listOfTasks)
+        listOfTasks.push(JSON.stringify(newTask))
+        window.localStorage.setItem("tasksExistants",listOfTasks)   
         console.log(localStorage)
-        // window.localStorage.setItem("tasksExistants", newTask)
-        // console.log(localStorage)
-
-        // let tasksSaved = window.localStorage.getItem("tasksExistants")
-        // console.log(JSON.parse(tasksSaved))
-        // console.log(newTask)
-        // listOfTasks.push(newTask)
 
 
         // tasksExistants.push({
@@ -51,6 +42,7 @@ export function addTask(){
 }
 
 function idRandom(){
-    const idRandom = Math.floor(Math.random() * Math.floor(Math.random() * Date.now()))
+    // const idRandom = Math.floor(Math.random() * Math.floor(Math.random() * Date.now()))
+    const idRandom = Date.now()
     return idRandom
 }
